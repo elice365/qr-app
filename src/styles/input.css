@@ -1,0 +1,723 @@
+/* Advanced Input Design System - Premium QR Generator */
+
+/* ========================================
+   1. CSS Variables & Theme System
+   ======================================== */
+
+:root {
+  /* Light Theme Variables */
+  --input-bg: linear-gradient(180deg, #ffffff 0%, #fafbfc 100%);
+  --input-bg-hover: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+  --input-bg-focus: #ffffff;
+  --input-border: #e1e4e8;
+  --input-border-hover: #d1d5da;
+  --input-border-focus: #3b82f6;
+  --input-text: #24292e;
+  --input-placeholder: #6a737d;
+  --input-icon: #959da5;
+  --input-icon-focus: #3b82f6;
+  --input-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --input-shadow-hover: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --input-shadow-focus: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  --input-label: #24292e;
+  --input-helper: #586069;
+  --input-error: #dc2626;
+  --input-success: #16a34a;
+  --input-warning: #f59e0b;
+  
+  /* Spacing & Sizing */
+  --input-padding-x: 1rem;
+  --input-padding-y: 0.75rem;
+  --input-radius: 0.625rem;
+  --input-height: 2.875rem;
+  --input-font-size: 0.9375rem;
+  --input-line-height: 1.5;
+  --input-icon-size: 1.25rem;
+  
+  /* Transitions */
+  --input-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --input-transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark Theme Variables - Force override system preferences */
+html.dark,
+html[data-theme="dark"] {
+  --input-bg: rgba(31, 41, 55, 0.6);
+  --input-bg-hover: rgba(55, 65, 81, 0.8);
+  --input-bg-focus: rgba(17, 24, 39, 0.9);
+  --input-border: rgba(75, 85, 99, 0.5);
+  --input-border-hover: rgba(107, 114, 128, 0.7);
+  --input-border-focus: rgba(59, 130, 246, 0.8);
+  --input-text: #ffffff;
+  --input-placeholder: rgba(156, 163, 175, 0.8);
+  --input-icon: rgba(156, 163, 175, 0.7);
+  --input-icon-focus: #3b82f6;
+  --input-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --input-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --input-shadow-focus: 0 0 0 3px rgba(59, 130, 246, 0.25), 0 4px 12px rgba(0, 0, 0, 0.5);
+  --input-label: #ffffff;
+  --input-helper: rgba(156, 163, 175, 0.9);
+  --input-error: #ef4444;
+  --input-success: #10b981;
+  --input-warning: #f59e0b;
+}
+
+/* ========================================
+   2. Base Input Styles
+   ======================================== */
+
+.input-field {
+  position: relative;
+  width: 100%;
+  min-height: var(--input-height);
+  padding: var(--input-padding-y) var(--input-padding-x);
+  background: var(--input-bg);
+  border: 2px solid var(--input-border);
+  border-radius: var(--input-radius);
+  color: var(--input-text);
+  font-size: var(--input-font-size);
+  line-height: var(--input-line-height);
+  font-weight: 500;
+  outline: none;
+  transition: var(--input-transition);
+  box-shadow: var(--input-shadow);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.input-field::placeholder {
+  color: var(--input-placeholder);
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.input-field:hover:not(:focus):not(:disabled) {
+  background: var(--input-bg-hover);
+  border-color: var(--input-border-hover);
+  box-shadow: var(--input-shadow-hover);
+}
+
+.input-field:focus {
+  background: var(--input-bg-focus);
+  border-color: var(--input-border-focus);
+  box-shadow: var(--input-shadow-focus);
+  transform: translateY(-1px);
+}
+
+.input-field:focus::placeholder {
+  opacity: 0.7;
+}
+
+/* ========================================
+   3. Input with Icons
+   ======================================== */
+
+.input-with-icon {
+  position: relative;
+}
+
+.input-with-icon .input-field {
+  padding-left: calc(var(--input-padding-x) * 2.5);
+}
+
+.input-with-icon .input-icon-left {
+  position: absolute;
+  left: var(--input-padding-x);
+  top: 50%;
+  transform: translateY(-50%);
+  width: var(--input-icon-size);
+  height: var(--input-icon-size);
+  color: var(--input-icon);
+  pointer-events: none;
+  transition: var(--input-transition-fast);
+  z-index: 1;
+}
+
+.input-with-icon .input-field:focus ~ .input-icon-left,
+.input-with-icon .input-field:hover ~ .input-icon-left {
+  color: var(--input-icon-focus);
+}
+
+/* Right Icon Support */
+.input-with-icon-right .input-field {
+  padding-right: calc(var(--input-padding-x) * 2.5);
+}
+
+.input-with-icon-right .input-icon-right {
+  position: absolute;
+  right: var(--input-padding-x);
+  top: 50%;
+  transform: translateY(-50%);
+  width: var(--input-icon-size);
+  height: var(--input-icon-size);
+  color: var(--input-icon);
+  pointer-events: none;
+  transition: var(--input-transition-fast);
+}
+
+/* ========================================
+   4. Textarea Styles
+   ======================================== */
+
+textarea.input-field {
+  resize: vertical;
+  min-height: 7rem;
+  padding-top: calc(var(--input-padding-y) * 1.2);
+  padding-bottom: calc(var(--input-padding-y) * 1.2);
+  font-family: inherit;
+}
+
+.textarea-wrapper {
+  position: relative;
+}
+
+.textarea-counter {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  font-size: 0.75rem;
+  color: var(--input-helper);
+  background: var(--input-bg-focus);
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.textarea-wrapper:focus-within .textarea-counter {
+  opacity: 1;
+}
+
+/* ========================================
+   5. Select Dropdown Styles
+   ======================================== */
+
+select.input-field {
+  cursor: pointer;
+  padding-right: calc(var(--input-padding-x) * 2.5);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M5 7.5L10 12.5L15 7.5' stroke='%236a737d' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--input-padding-x) center;
+  background-size: var(--input-icon-size);
+}
+
+.dark select.input-field {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M5 7.5L10 12.5L15 7.5' stroke='%239ca3af' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+select.input-field:focus {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M5 7.5L10 12.5L15 7.5' stroke='%233b82f6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+/* ========================================
+   6. Checkbox & Radio Styles
+   ======================================== */
+
+.checkbox-wrapper,
+.radio-wrapper {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: var(--input-radius);
+  transition: background-color 0.2s ease;
+}
+
+.checkbox-wrapper:hover,
+.radio-wrapper:hover {
+  background-color: rgba(59, 130, 246, 0.05);
+}
+
+.checkbox-input,
+.radio-input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkbox-custom,
+.radio-custom {
+  position: relative;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid var(--input-border);
+  border-radius: 0.25rem;
+  background: var(--input-bg-focus);
+  transition: var(--input-transition);
+  margin-right: 0.75rem;
+}
+
+.radio-custom {
+  border-radius: 50%;
+}
+
+.checkbox-input:checked ~ .checkbox-custom,
+.radio-input:checked ~ .radio-custom {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  border-color: #2563eb;
+}
+
+.checkbox-custom::after {
+  content: '';
+  position: absolute;
+  display: none;
+  left: 5px;
+  top: 2px;
+  width: 5px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.radio-custom::after {
+  content: '';
+  position: absolute;
+  display: none;
+  left: 50%;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: white;
+  transform: translate(-50%, -50%);
+}
+
+.checkbox-input:checked ~ .checkbox-custom::after,
+.radio-input:checked ~ .radio-custom::after {
+  display: block;
+}
+
+/* ========================================
+   7. Input Group & Label Styles
+   ======================================== */
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.625rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--input-label);
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.form-label.required::after {
+  content: ' *';
+  color: var(--input-error);
+}
+
+.form-helper {
+  margin-top: 0.375rem;
+  font-size: 0.8125rem;
+  color: var(--input-helper);
+  line-height: 1.4;
+}
+
+/* ========================================
+   8. Validation States
+   ======================================== */
+
+/* Error State */
+.input-field.error {
+  border-color: var(--input-error);
+  background: linear-gradient(180deg, rgba(254, 242, 242, 0.5) 0%, rgba(254, 242, 242, 0.3) 100%);
+}
+
+.dark .input-field.error {
+  background: linear-gradient(180deg, rgba(127, 29, 29, 0.1) 0%, rgba(127, 29, 29, 0.05) 100%);
+}
+
+.input-field.error:focus {
+  border-color: var(--input-error);
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.form-error {
+  margin-top: 0.375rem;
+  font-size: 0.8125rem;
+  color: var(--input-error);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Success State */
+.input-field.success {
+  border-color: var(--input-success);
+  background: linear-gradient(180deg, rgba(240, 253, 244, 0.5) 0%, rgba(240, 253, 244, 0.3) 100%);
+}
+
+.dark .input-field.success {
+  background: linear-gradient(180deg, rgba(34, 197, 94, 0.1) 0%, rgba(34, 197, 94, 0.05) 100%);
+}
+
+.input-field.success:focus {
+  border-color: var(--input-success);
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
+}
+
+.form-success {
+  margin-top: 0.375rem;
+  font-size: 0.8125rem;
+  color: var(--input-success);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Warning State */
+.input-field.warning {
+  border-color: var(--input-warning);
+  background: linear-gradient(180deg, rgba(254, 252, 232, 0.5) 0%, rgba(254, 252, 232, 0.3) 100%);
+}
+
+.dark .input-field.warning {
+  background: linear-gradient(180deg, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.05) 100%);
+}
+
+/* ========================================
+   9. Disabled State
+   ======================================== */
+
+.input-field:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  background: #f5f5f5;
+  border-color: #e0e0e0;
+}
+
+.dark .input-field:disabled {
+  background: rgb(17 24 39);
+  border-color: rgb(55 65 81);
+  opacity: 0.5;
+}
+
+/* ========================================
+   10. Loading State
+   ======================================== */
+
+.input-loading {
+  position: relative;
+  pointer-events: none;
+}
+
+.input-loading::after {
+  content: '';
+  position: absolute;
+  right: var(--input-padding-x);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid var(--input-border);
+  border-top-color: var(--input-border-focus);
+  border-radius: 50%;
+  animation: input-spin 0.6s linear infinite;
+}
+
+@keyframes input-spin {
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+/* ========================================
+   11. Focus Visible Enhancement
+   ======================================== */
+
+.input-field:focus-visible {
+  outline: 2px solid var(--input-border-focus);
+  outline-offset: 2px;
+}
+
+/* ========================================
+   12. Responsive Design
+   ======================================== */
+
+@media (max-width: 640px) {
+  :root {
+    --input-padding-x: 0.875rem;
+    --input-padding-y: 0.625rem;
+    --input-font-size: 0.875rem;
+  }
+}
+
+/* ========================================
+   13. Animation Classes
+   ======================================== */
+
+.input-shake {
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+  20%, 40%, 60%, 80% { transform: translateX(2px); }
+}
+
+.input-pulse {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
+  70% { box-shadow: 0 0 0 8px rgba(59, 130, 246, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+}
+
+/* ========================================
+   14. Premium Input Styles (Missing Classes)
+   ======================================== */
+
+/* Premium input style - same as input-field but with enhanced styling */
+.input-premium {
+  position: relative;
+  width: 100%;
+  min-height: var(--input-height);
+  padding: var(--input-padding-y) var(--input-padding-x);
+  background: var(--input-bg);
+  border: 2px solid var(--input-border);
+  border-radius: var(--input-radius);
+  color: var(--input-text);
+  font-size: var(--input-font-size);
+  line-height: var(--input-line-height);
+  font-weight: 500;
+  outline: none;
+  transition: var(--input-transition);
+  box-shadow: var(--input-shadow);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.input-premium::placeholder {
+  color: var(--input-placeholder);
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.input-premium:hover:not(:focus):not(:disabled) {
+  background: var(--input-bg-hover);
+  border-color: var(--input-border-hover);
+  box-shadow: var(--input-shadow-hover);
+}
+
+.input-premium:focus {
+  background: var(--input-bg-focus);
+  border-color: var(--input-border-focus);
+  box-shadow: var(--input-shadow-focus);
+  transform: translateY(-1px);
+}
+
+.input-premium:focus::placeholder {
+  opacity: 0.7;
+}
+
+/* With icon modifier */
+.input-premium.with-icon {
+  padding-left: calc(var(--input-padding-x) * 2.5);
+}
+
+/* Input group wrapper */
+.input-group {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+/* Input label */
+.input-label {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--input-label);
+  letter-spacing: 0.025em;
+  text-transform: none;
+}
+
+/* Input icon positioning for premium inputs */
+.input-icon {
+  position: absolute;
+  left: var(--input-padding-x);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--input-icon);
+  pointer-events: none;
+  transition: var(--input-transition-fast);
+  z-index: 1;
+}
+
+/* Icon color change on focus/hover */
+.input-premium.with-icon:focus ~ .input-icon,
+.input-premium.with-icon:hover ~ .input-icon {
+  color: var(--input-icon-focus);
+}
+
+/* Alternative icon positioning method */
+.relative .input-icon {
+  position: absolute;
+  left: var(--input-padding-x);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--input-icon);
+  pointer-events: none;
+  transition: var(--input-transition-fast);
+  z-index: 1;
+}
+
+/* Focus states for icons in relative containers */
+.relative:focus-within .input-icon {
+  color: var(--input-icon-focus);
+}
+
+/* ========================================
+   15. Enhanced Visual Improvements
+   ======================================== */
+
+/* Improved spacing for input groups */
+.input-group + .input-group {
+  margin-top: 1.25rem;
+}
+
+/* Better visual hierarchy for labels - merged with existing input-label */
+
+/* Enhanced grid layout for forms */
+.grid.grid-cols-2.gap-3 .input-group {
+  margin-bottom: 0;
+}
+
+/* Better spacing for space-y-4 containers */
+.space-y-4 > * + * {
+  margin-top: 1.25rem;
+}
+
+/* Improved textarea styling */
+textarea.input-premium {
+  resize: vertical;
+  min-height: 7rem;
+  padding-top: calc(var(--input-padding-y) * 1.2);
+  padding-bottom: calc(var(--input-padding-y) * 1.2);
+  font-family: inherit;
+  line-height: 1.6;
+}
+
+/* Enhanced select styling for premium inputs */
+select.input-premium {
+  cursor: pointer;
+  padding-right: calc(var(--input-padding-x) * 2.5);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M5 7.5L10 12.5L15 7.5' stroke='%236a737d' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--input-padding-x) center;
+  background-size: var(--input-icon-size);
+}
+
+.dark select.input-premium,
+html[data-theme="dark"] select.input-premium {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M5 7.5L10 12.5L15 7.5' stroke='%239ca3af' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+select.input-premium:focus {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M5 7.5L10 12.5L15 7.5' stroke='%233b82f6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+/* Enhanced checkbox styling */
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.75rem;
+  border-radius: var(--input-radius);
+  transition: background-color 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.checkbox-wrapper:hover {
+  background-color: rgba(59, 130, 246, 0.05);
+  border-color: rgba(59, 130, 246, 0.1);
+}
+
+/* Icon sizing improvements */
+.input-icon.w-5.h-5 {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Better form section styling */
+.w-full h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--input-label);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--input-border);
+}
+
+/* Enhanced Dark Theme Support */
+.dark .input-premium.error,
+html[data-theme="dark"] .input-premium.error {
+  background: linear-gradient(180deg, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.05) 100%);
+}
+
+.dark .input-premium.success,
+html[data-theme="dark"] .input-premium.success {
+  background: linear-gradient(180deg, rgba(52, 211, 153, 0.1) 0%, rgba(52, 211, 153, 0.05) 100%);
+}
+
+.dark .input-premium.warning,
+html[data-theme="dark"] .input-premium.warning {
+  background: linear-gradient(180deg, rgba(251, 191, 36, 0.1) 0%, rgba(251, 191, 36, 0.05) 100%);
+}
+
+.dark .checkbox-wrapper:hover,
+html[data-theme="dark"] .checkbox-wrapper:hover {
+  background-color: rgba(96, 165, 250, 0.1);
+  border-color: rgba(96, 165, 250, 0.2);
+}
+
+/* Dark mode icon adjustments */
+.dark .input-icon,
+html[data-theme="dark"] .input-icon {
+  filter: brightness(0.9);
+}
+
+.dark .input-icon.dark\:brightness-0,
+html[data-theme="dark"] .input-icon.dark\:brightness-0 {
+  filter: brightness(0) invert(1);
+  opacity: 0.8;
+}
+
+.dark .relative:focus-within .input-icon.dark\:brightness-0,
+html[data-theme="dark"] .relative:focus-within .input-icon.dark\:brightness-0 {
+  opacity: 1;
+  filter: brightness(0) invert(1) saturate(1.2);
+}
+
+/* Better section titles in dark mode */
+.dark .w-full h3,
+html[data-theme="dark"] .w-full h3 {
+  color: #f3f4f6;
+  border-bottom-color: rgb(55 65 81);
+}
+
+/* Improved responsive design */
+@media (max-width: 640px) {
+  .grid.grid-cols-2 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .input-group {
+    margin-bottom: 1rem;
+  }
+  
+  .space-y-4 > * + * {
+    margin-top: 1rem;
+  }
+}

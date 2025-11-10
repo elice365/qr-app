@@ -1,0 +1,226 @@
+{
+  "common": {
+    "content": "コンテンツ",
+    "enterContent": "コンテンツを入力",
+    "optional": "オプション",
+    "apply": "適用"
+  },
+  "header": {
+    "title": "QRコードジェネレーター",
+    "subtitle": "プロフェッショナルQRコード生成サービス"
+  },
+  "hero": {
+    "title": "簡単3ステップでQRコード作成",
+    "subtitle": "モバイル最適化されたインターフェースで素早く簡単にQRコードを作成"
+  },
+  "steps": {
+    "selectType": {
+      "title": "QRコードタイプを選択",
+      "contentTitle": "コンテンツを入力"
+    },
+    "customize": {
+      "title": "QRをデザイン"
+    },
+    "download": {
+      "title": "QRダウンロード",
+      "placeholder": "コンテンツを入力するとQRコードが生成されます",
+      "pngButton": "PNGダウンロード",
+      "svgButton": "SVGダウンロード"
+    }
+  },
+  "qrTypes": {
+    "url": {
+      "label": "URL",
+      "description": "URLを開く",
+      "placeholder": "https://example.com",
+      "inputLabel": "ウェブサイトURL",
+      "helper": "ウェブサイトのアドレスを入力してください（例：https://example.com）"
+    },
+    "text": {
+      "label": "テキスト",
+      "description": "プレーンテキスト",
+      "placeholder": "テキストを入力",
+      "inputLabel": "テキスト内容",
+      "helper": "最大 2953 文字まで入力可能です"
+    },
+    "email": {
+      "label": "メール",
+      "description": "メール送信",
+      "inputLabel": "メール情報",
+      "to": "宛先",
+      "subject": "件名",
+      "body": "本文"
+    },
+    "sms": {
+      "label": "SMS",
+      "description": "SMS送信",
+      "inputLabel": "SMS情報",
+      "phone": "電話番号",
+      "message": "メッセージ（オプション）"
+    },
+    "wifi": {
+      "label": "WiFi",
+      "description": "WiFi接続",
+      "inputLabel": "WiFi設定",
+      "ssid": "ネットワーク名（SSID）",
+      "password": "パスワード",
+      "hidden": "非表示ネットワーク",
+      "noPassword": "パスワードなし"
+    },
+    "vcard": {
+      "label": "vCard Plus",
+      "description": "連絡先情報",
+      "inputLabel": "連絡先情報",
+      "firstName": "名",
+      "lastName": "姓",
+      "organization": "会社",
+      "phone": "電話",
+      "email": "メール",
+      "url": "ウェブサイト",
+      "address": "住所"
+    },
+    "bitcoin": {
+      "label": "ビットコイン",
+      "description": "ビットコインアドレス",
+      "placeholder": "ビットコインアドレスを入力",
+      "inputLabel": "ビットコインアドレス"
+    },
+    "twitter": {
+      "label": "Twitter",
+      "description": "Twitterプロフィール",
+      "placeholder": "@username",
+      "inputLabel": "Twitterユーザー名"
+    },
+    "facebook": {
+      "label": "Facebook",
+      "description": "Facebookプロフィール",
+      "placeholder": "username",
+      "inputLabel": "Facebookユーザー名"
+    },
+    "pdf": {
+      "label": "PDF",
+      "description": "PDFファイル",
+      "placeholder": "https://example.com/document.pdf",
+      "inputLabel": "PDFファイルURL"
+    },
+    "mp3": {
+      "label": "MP3",
+      "description": "MP3ファイル",
+      "placeholder": "https://example.com/music.mp3",
+      "inputLabel": "MP3ファイルURL"
+    },
+    "appstore": {
+      "label": "App Store",
+      "description": "App Storeリンク",
+      "placeholder": "https://apps.apple.com/app/id123456789",
+      "inputLabel": "App Store URL"
+    },
+    "image": {
+      "label": "画像",
+      "description": "画像ファイル",
+      "placeholder": "https://example.com/image.jpg",
+      "inputLabel": "画像URL"
+    }
+  },
+  "customization": {
+    "title": "QRコードをデザイン",
+    "tabs": {
+      "style": "スタイル",
+      "colors": "カラー",
+      "size": "サイズ",
+      "advanced": "詳細"
+    },
+    "pattern": {
+      "label": "パターンスタイル",
+      "square": "四角",
+      "dots": "ドット",
+      "rounded": "丸角",
+      "extra-rounded": "極丸",
+      "classy": "クラシック",
+      "classy-rounded": "クラシック丸",
+      "sharp": "シャープ",
+      "smooth": "スムーズ"
+    },
+    "borderStyle": {
+      "label": "ボーダースタイル",
+      "square": "四角",
+      "dot": "ドット",
+      "extra-rounded": "丸角"
+    },
+    "centerStyle": {
+      "label": "センタースタイル",
+      "square": "四角",
+      "dot": "ドット"
+    },
+    "colors": {
+      "foreground": "前景色",
+      "background": "背景色",
+      "border": "ボーダー色"
+    },
+    "sizeLabel": "サイズ (px)",
+    "errorCorrection": {
+      "label": "エラー訂正レベル",
+      "low": "低 (7%)",
+      "medium": "中 (15%)",
+      "quartile": "高 (25%)",
+      "high": "最高 (30%)",
+      "description": "高いレベルほど損傷したQRコードも読み取れますが、サイズが大きくなります。"
+    },
+    "margin": "マージン含む"
+  },
+  "features": {
+    "unlimited": {
+      "title": "無制限",
+      "description": "QRコード生成"
+    },
+    "customization": {
+      "title": "カスタマイズ",
+      "description": "色とスタイル"
+    },
+    "formats": {
+      "title": "様々な形式",
+      "description": "PNG、SVGダウンロード"
+    },
+    "speed": {
+      "title": "高速生成",
+      "description": "即座に作成"
+    }
+  },
+  "howTo": {
+    "title": "QRコードの作り方は？",
+    "step1": {
+      "title": "QRタイプを選択",
+      "description": "URL、テキスト、WiFiなど様々なQRコードタイプから選択"
+    },
+    "step2": {
+      "title": "内容入力＆カスタマイズ",
+      "description": "情報を入力し、色とサイズを好みに調整"
+    },
+    "step3": {
+      "title": "QRコードをダウンロード",
+      "description": "生成されたQRコードをPNGまたはSVG形式でダウンロード"
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 QRコードジェネレーター。全著作権所有。",
+    "madeWith": "Made with",
+    "trademark": "QR Code®はデンソーウェーブの登録商標です",
+    "tagline": "プロフェッショナルQRコードソリューション",
+    "description": "高速で安全、使いやすいQRコードジェネレーター。ビジネスと個人利用に最適です。",
+    "quickLinks": "クイックリンク",
+    "home": "ホーム",
+    "about": "概要",
+    "features": "機能",
+    "api": "API",
+    "resources": "リソース",
+    "privacy": "プライバシーポリシー",
+    "terms": "利用規約",
+    "support": "サポート",
+    "blog": "ブログ",
+    "feature1": "高速生成",
+    "feature2": "安全な処理",
+    "feature3": "オープンソース",
+    "rights": "全著作権所有。",
+    "by": "by"
+  }
+}

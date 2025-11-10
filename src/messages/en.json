@@ -1,0 +1,226 @@
+{
+  "common": {
+    "content": "Content",
+    "enterContent": "Enter content",
+    "optional": "Optional",
+    "apply": "Apply"
+  },
+  "header": {
+    "title": "QR Code Generator",
+    "subtitle": "Professional QR Code Generation Service"
+  },
+  "hero": {
+    "title": "Create QR Code in 3 Simple Steps",
+    "subtitle": "Create QR codes quickly and easily with our mobile-optimized interface"
+  },
+  "steps": {
+    "selectType": {
+      "title": "Select QR Code Type",
+      "contentTitle": "Complete Your Content"
+    },
+    "customize": {
+      "title": "Design Your QR"
+    },
+    "download": {
+      "title": "Download QR",
+      "placeholder": "Enter content to generate QR code",
+      "pngButton": "Download PNG",
+      "svgButton": "Download SVG"
+    }
+  },
+  "qrTypes": {
+    "url": {
+      "label": "URL",
+      "description": "Open URL",
+      "placeholder": "https://example.com",
+      "inputLabel": "Website URL",
+      "helper": "Enter the website address (e.g., https://example.com)"
+    },
+    "text": {
+      "label": "Text",
+      "description": "Plain Text",
+      "placeholder": "Enter your text",
+      "inputLabel": "Text Content",
+      "helper": "Maximum 2953 characters allowed"
+    },
+    "email": {
+      "label": "Email",
+      "description": "Send Email",
+      "inputLabel": "Email Information",
+      "to": "To",
+      "subject": "Subject",
+      "body": "Body"
+    },
+    "sms": {
+      "label": "SMS",
+      "description": "Send SMS",
+      "inputLabel": "SMS Information",
+      "phone": "Phone Number",
+      "message": "Message (Optional)"
+    },
+    "wifi": {
+      "label": "WiFi",
+      "description": "WiFi Connection",
+      "inputLabel": "WiFi Settings",
+      "ssid": "Network Name (SSID)",
+      "password": "Password",
+      "hidden": "Hidden Network",
+      "noPassword": "No Password"
+    },
+    "vcard": {
+      "label": "vCard Plus",
+      "description": "Contact Info",
+      "inputLabel": "Contact Information",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "organization": "Company",
+      "phone": "Phone",
+      "email": "Email",
+      "url": "Website",
+      "address": "Address"
+    },
+    "bitcoin": {
+      "label": "Bitcoin",
+      "description": "Bitcoin Address",
+      "placeholder": "Enter Bitcoin address",
+      "inputLabel": "Bitcoin Address"
+    },
+    "twitter": {
+      "label": "Twitter",
+      "description": "Twitter Profile",
+      "placeholder": "@username",
+      "inputLabel": "Twitter Username"
+    },
+    "facebook": {
+      "label": "Facebook",
+      "description": "Facebook Profile",
+      "placeholder": "username",
+      "inputLabel": "Facebook Username"
+    },
+    "pdf": {
+      "label": "PDF",
+      "description": "PDF File",
+      "placeholder": "https://example.com/document.pdf",
+      "inputLabel": "PDF File URL"
+    },
+    "mp3": {
+      "label": "MP3",
+      "description": "MP3 File",
+      "placeholder": "https://example.com/music.mp3",
+      "inputLabel": "MP3 File URL"
+    },
+    "appstore": {
+      "label": "App Store",
+      "description": "App Store Link",
+      "placeholder": "https://apps.apple.com/app/id123456789",
+      "inputLabel": "App Store URL"
+    },
+    "image": {
+      "label": "Image",
+      "description": "Image File",
+      "placeholder": "https://example.com/image.jpg",
+      "inputLabel": "Image URL"
+    }
+  },
+  "customization": {
+    "title": "Design Your QR Code",
+    "tabs": {
+      "style": "Style",
+      "colors": "Colors",
+      "size": "Size",
+      "advanced": "Advanced"
+    },
+    "pattern": {
+      "label": "Pattern Style",
+      "square": "Square",
+      "dots": "Dots",
+      "rounded": "Rounded",
+      "extra-rounded": "Extra",
+      "classy": "Classy",
+      "classy-rounded": "Classy+",
+      "sharp": "Sharp",
+      "smooth": "Smooth"
+    },
+    "borderStyle": {
+      "label": "Border Style",
+      "square": "Square",
+      "dot": "Dot",
+      "extra-rounded": "Rounded"
+    },
+    "centerStyle": {
+      "label": "Center Style",
+      "square": "Square",
+      "dot": "Dot"
+    },
+    "colors": {
+      "foreground": "Foreground",
+      "background": "Background",
+      "border": "Border"
+    },
+    "sizeLabel": "Size (px)",
+    "errorCorrection": {
+      "label": "Error Correction Level",
+      "low": "Low (7%)",
+      "medium": "Medium (15%)",
+      "quartile": "High (25%)",
+      "high": "Highest (30%)",
+      "description": "Higher levels can recover damaged QR codes but result in larger sizes."
+    },
+    "margin": "Include Margin"
+  },
+  "features": {
+    "unlimited": {
+      "title": "Unlimited",
+      "description": "QR Code Generation"
+    },
+    "customization": {
+      "title": "Customization",
+      "description": "Colors and Styles"
+    },
+    "formats": {
+      "title": "Various Formats",
+      "description": "PNG, SVG Download"
+    },
+    "speed": {
+      "title": "Fast Generation",
+      "description": "Instant Creation"
+    }
+  },
+  "howTo": {
+    "title": "How to Create QR Code?",
+    "step1": {
+      "title": "Select QR Type",
+      "description": "Choose from various QR code types like URL, Text, WiFi"
+    },
+    "step2": {
+      "title": "Enter Content & Customize",
+      "description": "Enter information and adjust colors and size as desired"
+    },
+    "step3": {
+      "title": "Download QR Code",
+      "description": "Download generated QR code in PNG or SVG format"
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 QR Code Generator. All rights reserved.",
+    "madeWith": "Made with",
+    "trademark": "QR Code® is a registered trademark of DENSO WAVE INCORPORATED",
+    "tagline": "Professional QR Code Solution",
+    "description": "Fast, secure, and easy-to-use QR code generator. Perfect for business and personal use.",
+    "quickLinks": "Quick Links",
+    "home": "Home",
+    "about": "About",
+    "features": "Features",
+    "api": "API",
+    "resources": "Resources",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "support": "Support",
+    "blog": "Blog",
+    "feature1": "Fast Generation",
+    "feature2": "Secure Processing",
+    "feature3": "Open Source",
+    "rights": "All rights reserved.",
+    "by": "by"
+  }
+}

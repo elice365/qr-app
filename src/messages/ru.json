@@ -1,0 +1,226 @@
+{
+  "common": {
+    "content": "Контент",
+    "enterContent": "Введите контент",
+    "optional": "Опционально",
+    "apply": "Применить"
+  },
+  "header": {
+    "title": "Генератор QR-кодов",
+    "subtitle": "Профессиональный сервис генерации QR-кодов"
+  },
+  "hero": {
+    "title": "Создайте QR-код за 3 простых шага",
+    "subtitle": "Создавайте QR-коды быстро и легко с нашим мобильно-оптимизированным интерфейсом"
+  },
+  "steps": {
+    "selectType": {
+      "title": "Выберите тип QR-кода",
+      "contentTitle": "Заполните контент"
+    },
+    "customize": {
+      "title": "Создайте дизайн QR"
+    },
+    "download": {
+      "title": "Скачать QR",
+      "placeholder": "Введите контент для генерации QR-кода",
+      "pngButton": "Скачать PNG",
+      "svgButton": "Скачать SVG"
+    }
+  },
+  "qrTypes": {
+    "url": {
+      "label": "URL",
+      "description": "Открыть URL",
+      "placeholder": "https://example.com",
+      "inputLabel": "URL веб-сайта",
+      "helper": "Введите адрес веб-сайта (например: https://example.com)"
+    },
+    "text": {
+      "label": "Текст",
+      "description": "Простой текст",
+      "placeholder": "Введите текст",
+      "inputLabel": "Текстовое содержание",
+      "helper": "Максимум 2953 символа"
+    },
+    "email": {
+      "label": "Email",
+      "description": "Отправить Email",
+      "inputLabel": "Информация Email",
+      "to": "Кому",
+      "subject": "Тема",
+      "body": "Текст"
+    },
+    "sms": {
+      "label": "SMS",
+      "description": "Отправить SMS",
+      "inputLabel": "Информация SMS",
+      "phone": "Номер телефона",
+      "message": "Сообщение (необязательно)"
+    },
+    "wifi": {
+      "label": "WiFi",
+      "description": "Подключение WiFi",
+      "inputLabel": "Настройки WiFi",
+      "ssid": "Имя сети (SSID)",
+      "password": "Пароль",
+      "hidden": "Скрытая сеть",
+      "noPassword": "Без пароля"
+    },
+    "vcard": {
+      "label": "vCard Plus",
+      "description": "Контактная информация",
+      "inputLabel": "Контактная информация",
+      "firstName": "Имя",
+      "lastName": "Фамилия",
+      "organization": "Компания",
+      "phone": "Телефон",
+      "email": "Email",
+      "url": "Веб-сайт",
+      "address": "Адрес"
+    },
+    "bitcoin": {
+      "label": "Bitcoin",
+      "description": "Bitcoin адрес",
+      "placeholder": "Введите Bitcoin адрес",
+      "inputLabel": "Bitcoin адрес"
+    },
+    "twitter": {
+      "label": "Twitter",
+      "description": "Профиль Twitter",
+      "placeholder": "@username",
+      "inputLabel": "Имя пользователя Twitter"
+    },
+    "facebook": {
+      "label": "Facebook",
+      "description": "Профиль Facebook",
+      "placeholder": "username",
+      "inputLabel": "Имя пользователя Facebook"
+    },
+    "pdf": {
+      "label": "PDF",
+      "description": "PDF файл",
+      "placeholder": "https://example.com/document.pdf",
+      "inputLabel": "URL PDF файла"
+    },
+    "mp3": {
+      "label": "MP3",
+      "description": "MP3 файл",
+      "placeholder": "https://example.com/music.mp3",
+      "inputLabel": "URL MP3 файла"
+    },
+    "appstore": {
+      "label": "App Store",
+      "description": "Ссылка App Store",
+      "placeholder": "https://apps.apple.com/app/id123456789",
+      "inputLabel": "URL App Store"
+    },
+    "image": {
+      "label": "Изображение",
+      "description": "Файл изображения",
+      "placeholder": "https://example.com/image.jpg",
+      "inputLabel": "URL изображения"
+    }
+  },
+  "customization": {
+    "title": "Оформите QR-код",
+    "tabs": {
+      "style": "Стиль",
+      "colors": "Цвета",
+      "size": "Размер",
+      "advanced": "Дополнительно"
+    },
+    "pattern": {
+      "label": "Стиль узора",
+      "square": "Квадрат",
+      "dots": "Точки",
+      "rounded": "Округлый",
+      "extra-rounded": "Экстра",
+      "classy": "Классика",
+      "classy-rounded": "Классика+",
+      "sharp": "Острый",
+      "smooth": "Гладкий"
+    },
+    "borderStyle": {
+      "label": "Стиль границы",
+      "square": "Квадрат",
+      "dot": "Точка",
+      "extra-rounded": "Закругленный"
+    },
+    "centerStyle": {
+      "label": "Стиль центра",
+      "square": "Квадрат",
+      "dot": "Точка"
+    },
+    "colors": {
+      "foreground": "Передний план",
+      "background": "Фон",
+      "border": "Граница"
+    },
+    "sizeLabel": "Размер (px)",
+    "errorCorrection": {
+      "label": "Уровень коррекции ошибок",
+      "low": "Низкий (7%)",
+      "medium": "Средний (15%)",
+      "quartile": "Высокий (25%)",
+      "high": "Наивысший (30%)",
+      "description": "Более высокие уровни могут восстановить поврежденные QR-коды, но увеличивают размер."
+    },
+    "margin": "Включить поля"
+  },
+  "features": {
+    "unlimited": {
+      "title": "Неограниченно",
+      "description": "Генерация QR-кодов"
+    },
+    "customization": {
+      "title": "Настройка",
+      "description": "Цвета и стили"
+    },
+    "formats": {
+      "title": "Различные форматы",
+      "description": "Скачать PNG, SVG"
+    },
+    "speed": {
+      "title": "Быстрая генерация",
+      "description": "Мгновенное создание"
+    }
+  },
+  "howTo": {
+    "title": "Как создать QR-код?",
+    "step1": {
+      "title": "Выберите тип QR",
+      "description": "Выберите из различных типов QR-кодов, таких как URL, текст, WiFi"
+    },
+    "step2": {
+      "title": "Введите контент и настройте",
+      "description": "Введите информацию и настройте цвета и размер по желанию"
+    },
+    "step3": {
+      "title": "Скачайте QR-код",
+      "description": "Скачайте сгенерированный QR-код в формате PNG или SVG"
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Генератор QR-кодов. Все права защищены.",
+    "madeWith": "Сделано с",
+    "trademark": "QR Code® является зарегистрированной торговой маркой DENSO WAVE INCORPORATED",
+    "tagline": "Профессиональное решение для QR-кодов",
+    "description": "Быстрый, безопасный и простой в использовании генератор QR-кодов. Идеально подходит для бизнеса и личного использования.",
+    "quickLinks": "Быстрые ссылки",
+    "home": "Главная",
+    "about": "О нас",
+    "features": "Функции",
+    "api": "API",
+    "resources": "Ресурсы",
+    "privacy": "Политика конфиденциальности",
+    "terms": "Условия использования",
+    "support": "Поддержка",
+    "blog": "Блог",
+    "feature1": "Быстрая генерация",
+    "feature2": "Безопасная обработка",
+    "feature3": "Открытый исходный код",
+    "rights": "Все права защищены.",
+    "by": "от"
+  }
+}

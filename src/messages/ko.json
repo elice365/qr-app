@@ -1,0 +1,226 @@
+{
+  "common": {
+    "content": "콘텐츠",
+    "enterContent": "콘텐츠를 입력하세요",
+    "optional": "선택사항",
+    "apply": "적용하기"
+  },
+  "header": {
+    "title": "QR 코드 생성기",
+    "subtitle": "프로페셔널 QR 코드 생성 서비스"
+  },
+  "hero": {
+    "title": "간단한 3단계로 QR 코드 생성",
+    "subtitle": "모바일 최적화된 인터페이스로 쉽고 빠르게 QR 코드를 만들어보세요"
+  },
+  "steps": {
+    "selectType": {
+      "title": "QR 코드 유형 선택",
+      "contentTitle": "콘텐츠를 완성하세요"
+    },
+    "customize": {
+      "title": "당신의 QR을 디자인해보세요"
+    },
+    "download": {
+      "title": "QR 다운로드",
+      "placeholder": "콘텐츠를 입력하면 QR 코드가 생성됩니다",
+      "pngButton": "PNG 다운로드",
+      "svgButton": "SVG 다운로드"
+    }
+  },
+  "qrTypes": {
+    "url": {
+      "label": "URL",
+      "description": "URL 열기",
+      "placeholder": "https://example.com",
+      "inputLabel": "웹사이트 URL",
+      "helper": "웹사이트 주소를 입력하세요 (예: https://example.com)"
+    },
+    "text": {
+      "label": "텍스트",
+      "description": "일반 텍스트",
+      "placeholder": "텍스트를 입력하세요",
+      "inputLabel": "텍스트 내용",
+      "helper": "최대 2953자까지 입력 가능합니다"
+    },
+    "email": {
+      "label": "이메일",
+      "description": "이메일 보내기",
+      "inputLabel": "이메일 정보",
+      "to": "받는 사람",
+      "subject": "제목",
+      "body": "내용"
+    },
+    "sms": {
+      "label": "SMS",
+      "description": "문자 보내기",
+      "inputLabel": "SMS 정보",
+      "phone": "전화번호",
+      "message": "메시지 (선택사항)"
+    },
+    "wifi": {
+      "label": "WiFi",
+      "description": "WiFi 연결",
+      "inputLabel": "WiFi 설정",
+      "ssid": "네트워크 이름 (SSID)",
+      "password": "비밀번호",
+      "hidden": "숨김 네트워크",
+      "noPassword": "암호 없음"
+    },
+    "vcard": {
+      "label": "vCard Plus",
+      "description": "연락처 정보",
+      "inputLabel": "연락처 정보",
+      "firstName": "이름",
+      "lastName": "성",
+      "organization": "회사",
+      "phone": "전화번호",
+      "email": "이메일",
+      "url": "웹사이트",
+      "address": "주소"
+    },
+    "bitcoin": {
+      "label": "Bitcoin",
+      "description": "Bitcoin 주소",
+      "placeholder": "Bitcoin 주소를 입력하세요",
+      "inputLabel": "Bitcoin 주소"
+    },
+    "twitter": {
+      "label": "Twitter",
+      "description": "Twitter 프로필",
+      "placeholder": "@username",
+      "inputLabel": "Twitter 사용자명"
+    },
+    "facebook": {
+      "label": "Facebook",
+      "description": "Facebook 프로필",
+      "placeholder": "username",
+      "inputLabel": "Facebook 사용자명"
+    },
+    "pdf": {
+      "label": "PDF",
+      "description": "PDF 파일",
+      "placeholder": "https://example.com/document.pdf",
+      "inputLabel": "PDF 파일 URL"
+    },
+    "mp3": {
+      "label": "MP3",
+      "description": "MP3 파일",
+      "placeholder": "https://example.com/music.mp3",
+      "inputLabel": "MP3 파일 URL"
+    },
+    "appstore": {
+      "label": "앱 스토어",
+      "description": "앱 스토어 링크",
+      "placeholder": "https://apps.apple.com/app/id123456789",
+      "inputLabel": "앱 스토어 URL"
+    },
+    "image": {
+      "label": "이미지",
+      "description": "이미지 파일",
+      "placeholder": "https://example.com/image.jpg",
+      "inputLabel": "이미지 URL"
+    }
+  },
+  "customization": {
+    "title": "QR 코드 디자인",
+    "tabs": {
+      "style": "모양",
+      "colors": "색상",
+      "size": "크기",
+      "advanced": "고급"
+    },
+    "pattern": {
+      "label": "모양 스타일",
+      "square": "사각",
+      "dots": "원형",
+      "rounded": "둥근",
+      "extra-rounded": "극둥근",
+      "classy": "클래식",
+      "classy-rounded": "클래식+",
+      "sharp": "샤프",
+      "smooth": "부드럽"
+    },
+    "borderStyle": {
+      "label": "테두리 스타일",
+      "square": "사각형",
+      "dot": "원형",
+      "extra-rounded": "둥근"
+    },
+    "centerStyle": {
+      "label": "센터 스타일",
+      "square": "사각형",
+      "dot": "원형"
+    },
+    "colors": {
+      "foreground": "전경색",
+      "background": "배경색",
+      "border": "테두리색"
+    },
+    "sizeLabel": "크기 (px)",
+    "errorCorrection": {
+      "label": "오류 정정 레벨",
+      "low": "낮음 (7%)",
+      "medium": "중간 (15%)",
+      "quartile": "높음 (25%)",
+      "high": "최고 (30%)",
+      "description": "높은 수준일수록 손상된 QR 코드도 읽을 수 있지만 크기가 커집니다."
+    },
+    "margin": "여백 포함"
+  },
+  "features": {
+    "unlimited": {
+      "title": "무제한",
+      "description": "QR 코드 생성"
+    },
+    "customization": {
+      "title": "커스터마이징",
+      "description": "색상과 스타일"
+    },
+    "formats": {
+      "title": "다양한 형식",
+      "description": "PNG, SVG 다운로드"
+    },
+    "speed": {
+      "title": "빠른 생성",
+      "description": "즉시 생성"
+    }
+  },
+  "howTo": {
+    "title": "QR 코드는 어떻게 만드나요?",
+    "step1": {
+      "title": "QR 타입 선택",
+      "description": "URL, 텍스트, WiFi 등 다양한 QR 코드 타입 중에서 선택하세요"
+    },
+    "step2": {
+      "title": "내용 입력 및 커스터마이징",
+      "description": "정보를 입력하고 색상과 크기를 원하는 대로 조정하세요"
+    },
+    "step3": {
+      "title": "QR 코드 다운로드",
+      "description": "생성된 QR 코드를 PNG 또는 SVG 형식으로 다운로드하세요"
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 QR 코드 생성기. 모든 권리 보유.",
+    "madeWith": "Next.js 15 + TypeScript + Tailwind CSS로 제작",
+    "trademark": "QR Code®는 DENSO WAVE INCORPORATED의 등록 상표입니다",
+    "tagline": "전문가용 QR 코드 솔루션",
+    "description": "빠르고 안전하며 사용하기 쉬운 QR 코드 생성기. 비즈니스와 개인 용도에 완벽합니다.",
+    "quickLinks": "빠른 링크",
+    "home": "홈",
+    "about": "소개",
+    "features": "기능",
+    "api": "API",
+    "resources": "리소스",
+    "privacy": "개인정보처리방침",
+    "terms": "이용약관",
+    "support": "지원",
+    "blog": "블로그",
+    "feature1": "빠른 생성",
+    "feature2": "안전한 처리",
+    "feature3": "오픈 소스",
+    "rights": "모든 권리 보유.",
+    "by": "by"
+  }
+}
