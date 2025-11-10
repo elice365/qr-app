@@ -5,8 +5,9 @@ export async function GET() {
   
   const pages = [
     '',
-    '/url', '/text', '/wifi', '/vcard', '/sms',
-    '/email', '/phone', '/location', '/event'
+    '/url', '/text', '/email', '/sms', '/wifi', '/vcard',
+    '/bitcoin', '/twitter', '/facebook', '/pdf', '/mp3',
+    '/appstore', '/image'
   ];
   
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

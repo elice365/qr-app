@@ -7,6 +7,7 @@ import GoogleAdsense from '@/components/GoogleAdsense';
 import Footer from '@/components/Footer';
 import ThemeToggle from '@/components/ThemeToggle';
 import { getTranslations } from 'next-intl/server';
+import { generateTypeMetadata } from '@/utils/seo';
 
 const validQRTypes = [
   'url', 'text', 'email', 'sms', 'wifi', 'vcard',
@@ -19,6 +20,17 @@ interface PageProps {
     locale: string;
     type: string;
   }>;
+}
+
+export async function generateMetadata({ params }: PageProps) {
+  const { locale, type } = await params;
+
+  // Validate locale and type
+  if (!locales.includes(locale as any) || !validQRTypes.includes(type as any)) {
+    return {};
+  }
+
+  return generateTypeMetadata(locale, type);
 }
 
 export default async function QRTypePage({ params }: PageProps) {
