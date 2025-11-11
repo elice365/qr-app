@@ -1,7 +1,24 @@
 import { Metadata } from 'next';
 
+// Type definitions for SEO configuration
+export type Locale = 'ko' | 'en' | 'ja' | 'ru';
+export type QRType = 'url' | 'text' | 'email' | 'sms' | 'wifi' | 'vcard' |
+                     'bitcoin' | 'twitter' | 'facebook' | 'pdf' | 'mp3' |
+                     'appstore' | 'image';
+
+export interface SEOMetadata {
+  title: string;
+  description: string;
+  keywords: string;
+  ogTitle: string;
+  ogDescription: string;
+}
+
+export type LocaleConfig = Record<Locale, SEOMetadata>;
+export type QRTypeConfig = Record<QRType, LocaleConfig>;
+
 // SEO Configuration for each locale
-export const SEO_CONFIG = {
+export const SEO_CONFIG: LocaleConfig = {
   ko: {
     title: 'QR 코드 생성기 - 무료 온라인 QR 코드 메이커 | 2025',
     description: '무료 QR 코드 생성기. URL, WiFi, 명함, SMS 등 즉시 생성. 로고·색상 커스터마이징, 회원가입 없이 무제한 사용.',
@@ -33,7 +50,7 @@ export const SEO_CONFIG = {
 };
 
 // QR Type specific SEO configurations
-export const QR_TYPE_SEO = {
+export const QR_TYPE_SEO: QRTypeConfig = {
   url: {
     ko: {
       title: 'URL QR 코드 생성기 - 웹사이트 링크를 QR 코드로 | 무료',
@@ -428,7 +445,7 @@ export const QR_TYPE_SEO = {
 
 // Generate metadata for each locale
 export function generateMetadata(locale: string): Metadata {
-  const config = SEO_CONFIG[locale as keyof typeof SEO_CONFIG] || SEO_CONFIG.ko;
+  const config = SEO_CONFIG[locale as Locale] || SEO_CONFIG.ko;
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://qr.elice.pro';
   const currentUrl = `${baseUrl}/${locale}`;
 
@@ -497,9 +514,9 @@ export function generateMetadata(locale: string): Metadata {
 
 // Generate metadata for QR type pages
 export function generateTypeMetadata(locale: string, type: string): Metadata {
-  const typeConfig = QR_TYPE_SEO[type as keyof typeof QR_TYPE_SEO]?.[locale as keyof typeof SEO_CONFIG] ||
-                     QR_TYPE_SEO[type as keyof typeof QR_TYPE_SEO]?.['ko'] ||
-                     SEO_CONFIG[locale as keyof typeof SEO_CONFIG] ||
+  const typeConfig = QR_TYPE_SEO[type as QRType]?.[locale as Locale] ||
+                     QR_TYPE_SEO[type as QRType]?.['ko'] ||
+                     SEO_CONFIG[locale as Locale] ||
                      SEO_CONFIG.ko;
 
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://qr.elice.pro';
@@ -570,7 +587,7 @@ export function generateTypeMetadata(locale: string, type: string): Metadata {
 
 // Structured Data for SEO
 export function generateStructuredData(locale: string) {
-  const config = SEO_CONFIG[locale as keyof typeof SEO_CONFIG] || SEO_CONFIG.ko;
+  const config = SEO_CONFIG[locale as Locale] || SEO_CONFIG.ko;
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://qr.elice.pro';
   
   // Validate locale parameter
@@ -579,7 +596,7 @@ export function generateStructuredData(locale: string) {
   }
   
   // Language-specific names
-  const appNames = {
+  const appNames: Record<Locale, string> = {
     ko: 'QR 코드 생성기',
     en: 'QR Code Generator',
     ja: 'QRコードジェネレーター',
@@ -592,7 +609,7 @@ export function generateStructuredData(locale: string) {
       '@context': 'https://schema.org',
       '@type': 'WebApplication',
       '@id': `${baseUrl}/#webapp`,
-      name: appNames[locale as keyof typeof appNames] || appNames.en,
+      name: appNames[locale as Locale] || appNames.en,
       description: config.description,
       url: `${baseUrl}/${locale}`,
       inLanguage: locale,
@@ -644,7 +661,7 @@ export function generateStructuredData(locale: string) {
           position: 2,
           item: {
             '@id': `${baseUrl}/${locale}`,
-            name: appNames[locale as keyof typeof appNames] || appNames.en
+            name: appNames[locale as Locale] || appNames.en
           }
         }
       ]

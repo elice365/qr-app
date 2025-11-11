@@ -22,11 +22,17 @@ interface PageProps {
   }>;
 }
 
+// Helper function to validate locale and type
+function isValidLocaleAndType(locale: string, type: string): boolean {
+  return (locales as ReadonlyArray<string>).includes(locale) &&
+         (validQRTypes as ReadonlyArray<string>).includes(type);
+}
+
 export async function generateMetadata({ params }: PageProps) {
   const { locale, type } = await params;
 
   // Validate locale and type
-  if (!locales.includes(locale as any) || !validQRTypes.includes(type as any)) {
+  if (!isValidLocaleAndType(locale, type)) {
     return {};
   }
 
@@ -37,7 +43,7 @@ export default async function QRTypePage({ params }: PageProps) {
   const { locale, type } = await params;
 
   // Validate locale and type
-  if (!locales.includes(locale as any) || !validQRTypes.includes(type as any)) {
+  if (!isValidLocaleAndType(locale, type)) {
     notFound();
   }
 
