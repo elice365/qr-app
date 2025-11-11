@@ -7,6 +7,7 @@ import GoogleAdsense from '@/components/GoogleAdsense';
 import Footer from '@/components/Footer';
 import ThemeToggle from '@/components/ThemeToggle';
 import { getTranslations } from 'next-intl/server';
+import { generateTypeMetadata } from '@/utils/seo';
 
 const validQRTypes = [
   'url', 'text', 'email', 'sms', 'wifi', 'vcard',
@@ -21,11 +22,28 @@ interface PageProps {
   }>;
 }
 
+// Helper function to validate locale and type
+function isValidLocaleAndType(locale: string, type: string): boolean {
+  return (locales as ReadonlyArray<string>).includes(locale) &&
+         (validQRTypes as ReadonlyArray<string>).includes(type);
+}
+
+export async function generateMetadata({ params }: PageProps) {
+  const { locale, type } = await params;
+
+  // Validate locale and type
+  if (!isValidLocaleAndType(locale, type)) {
+    return {};
+  }
+
+  return generateTypeMetadata(locale, type);
+}
+
 export default async function QRTypePage({ params }: PageProps) {
   const { locale, type } = await params;
 
   // Validate locale and type
-  if (!locales.includes(locale as any) || !validQRTypes.includes(type as any)) {
+  if (!isValidLocaleAndType(locale, type)) {
     notFound();
   }
 

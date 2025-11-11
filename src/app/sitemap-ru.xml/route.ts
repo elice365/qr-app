@@ -1,5 +1,5 @@
 import { generateLocaleSitemap } from '@/utils/sitemap';
 
 export async function GET() {
-  return generateLocaleSitemap('en');
+  return generateLocaleSitemap('ru');
 }
